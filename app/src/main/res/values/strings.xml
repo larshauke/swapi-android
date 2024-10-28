@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">SWAPI</string>
+
+    <string name="search_title">Search</string>
+    <string name="browse_title">Browse</string>
+    <string name="details_title_fallback">Details</string>
+    <string name="credits_title">Credits</string>
+
+    <string name="search_text">Search in Star Wars universe…</string>
+    <string name="search_no_results">No results :(</string>
+    <string name="search_hint">\"Search something, you must.\"</string>
+    <string name="search_load_more">Load more</string>
+
+    <string name="dismiss_btn">OK</string>
+    <string name="dialog_error_title">Error</string>
+
+    <string-array name="credits">
+        <item>Icon made by Freepik from www.flaticon.com</item>
+        <item>Icon made by Catailn Fertu from www.flaticon.com</item>
+        <item>Icon made by Anggara from www.flaticon.com</item>
+        <item>Icon made by Graphics Plazza from www.flaticon.com</item>
+    </string-array>
 </resources>

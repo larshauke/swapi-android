@@ -1,11 +1,11 @@
 package de.larshauke.swapi_android.search.data.webservice
 
-import de.larshauke.swapi_android.core.data.models.FilmDto
-import de.larshauke.swapi_android.core.data.models.PersonDto
-import de.larshauke.swapi_android.core.data.models.PlanetDto
-import de.larshauke.swapi_android.core.data.models.SpeciesDto
-import de.larshauke.swapi_android.core.data.models.StarshipDto
-import de.larshauke.swapi_android.core.data.models.VehicleDto
+import de.larshauke.swapi_android.core.models.FilmDto
+import de.larshauke.swapi_android.core.models.PersonDto
+import de.larshauke.swapi_android.core.models.PlanetDto
+import de.larshauke.swapi_android.core.models.SpeciesDto
+import de.larshauke.swapi_android.core.models.StarshipDto
+import de.larshauke.swapi_android.core.models.VehicleDto
 import de.larshauke.swapi_android.search.data.model.PaginatedResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -17,7 +17,6 @@ interface SearchApi {
     suspend fun searchPeople(
         @Query("search") query: String
     ): PaginatedResponse<PersonDto>
-
 
     @GET("films/")
     suspend fun searchFilms(

@@ -2,15 +2,20 @@
 agp = "8.5.2"
 kotlin = "2.0.20"
 ksp = "2.0.20-1.0.25"
+
 sdk_min = "26"
 sdk_compile = "34"
 
 coreKtx = "1.13.1"
 lifecycleRuntimeKtx = "2.8.6"
 
+kotlinxCollectionsImmutable = "0.3.7"
+kotlinxSerialization = "1.7.3"
+
 composeBom = "2024.10.00"
 activityCompose = "1.9.3"
 androidxCompose = "2.8.6"
+androidxComposeNavigation = "2.8.3"
 
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -27,14 +32,19 @@ retrofit = "2.11.0"
 okhttp = "4.12.0"
 okhttpLogging = "4.12.0"
 appcompat = "1.7.0"
+material = "1.12.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 
+# kotlin
+kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerialization"}
+
+# compose & co
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
@@ -44,6 +54,7 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-lifecycle-viewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidxCompose" }
+androidx-compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxComposeNavigation" }
 
 # Web
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
@@ -67,6 +78,7 @@ androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-co
 mockk = { module = "io.mockk:mockk-android", version.ref = "mockk" }
 turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 google-truth = { module = "com.google.truth:truth", version.ref = "truth" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

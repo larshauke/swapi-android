@@ -19,3 +19,4 @@ rootProject.name = "swapi-android"
 include(":app")
 include(":search")
 include(":core")
+include(":details")

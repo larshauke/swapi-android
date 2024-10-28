@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -38,6 +39,15 @@ android {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
+    kotlin {
+        compilerOptions {
+            freeCompilerArgs.addAll(
+                "-opt-in=kotlinx.coroutines.FlowPreview",
+                "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
+            )
+        }
+    }
+
     buildFeatures {
         compose = true
     }
@@ -46,15 +56,17 @@ android {
 dependencies {
     implementation(projects.core)
     implementation(projects.search)
+    implementation(projects.details)
 
     implementation(libs.bundles.retrofitSetup)
     implementation(libs.okhttp)
     implementation(libs.logging.interceptor)
+    implementation(libs.moshi.kotlin)
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
-    implementation(libs.moshi.kotlin)
+    implementation(libs.kotlinx.serialization.json)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -64,7 +76,11 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.kotlinx.collections.immutable)
+    implementation(libs.androidx.lifecycle.viewModelCompose)
 
+    implementation(libs.androidx.compose.navigation)
+    implementation(libs.hilt.navigation.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
